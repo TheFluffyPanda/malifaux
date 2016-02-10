@@ -4,20 +4,20 @@
   </div>
 </div>
 
-<div class="create">
+<div class="update">
   <div class="container">
     
     <!-- Your code here -->
     <%= form_for(@flavour) do |f| %>  
   <div class="field"> 
-	<%= f.label :flavour %><br>
-	<p class="form">Title: <%= f.text_field :title %></p>  
+   <%= f.label :flavour %><br>
+    <p class="form">Title: <%= f.text_field :title %></p>  
 	<p class="form">Order: <%= f.text_field :order %></p>
 	<p class="form">Content: <%= f.text_area :content %></p>  
 	<p class="form">Active?: <%= f.check_box :active %></p>
   </div> 
   <div class="actions"> 
-    <%= f.submit "Create" %> 
+    <%= f.submit "Update" %> 
   </div> 
 <% end %>
     

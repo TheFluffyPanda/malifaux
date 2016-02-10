@@ -1,0 +1,32 @@
+body{
+	background-image: image_url('steampunk_background.jpg');
+	background-color: rgb(129,93,62);
+	background-repeat: y;
+	background-position: right top;
+	background-attachment: fixed;
+}
+div.container
+{
+	padding: 20px; 
+	width: 650px;
+    margin: auto;
+}
+div.flavour
+{
+	background-color: hsla(0, 0%, 100%, 0.3);
+	border-radius: 25px;
+    padding: 20px; 
+}
+.navbar-text
+{
+	background-color: hsla(0, 0%, 100%, 0.3);
+	border-radius: 25px;
+    padding: 20px; 
+	width: 600px;
+    margin: auto;
+}
+.title
+{
+	font-size: 18pt;
+	font-weight: bold;
+}

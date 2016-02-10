@@ -1,20 +1,36 @@
 <div class="header">
-  <div class="container">
-    <h1>Flavour</h1>
-  </div>
+	<div class="container">
+		<div class="flavour">
+			<h1>Flavour</h1>
+		</div>
+	</div>
 </div>
 
-<div class="messages">
-  <div class="container">
-  
-    <!-- Your code here -->
-    <% @flavours.each do |flavour| %> 
-<div class="flavour"> 
-  <p class="content"><%= flavour.content %></p> 
-  <p class="time"><%= flavour.created_at %></p> 
-</div> 
-<% end %>
-    <%= link_to 'New Entry', "flavours/new" %>
-
-  </div>
+<div class="flavour_main">
+	<% @flavours.each do |flavour| %> 
+		<% if flavour.active? or current_user.admin? %>
+			<div class="container">
+				<div class="flavour"> 
+		  
+				<p class="title"><%= flavour.title %></p> 
+				<p class="flavour-content"><%= flavour.content.html_safe %></p> 
+				  
+				<% if current_user.admin? %>
+					<p class="active">Currently active? - <%= flavour.active? %></p> 
+					<!--<p class="time"><%= flavour.created_at %></p> -->
+					<p class="time">Order: <%= flavour.order %></p>
+					<p class="link"><%= link_to "Delete", flavour_path(flavour), method: "delete" %><p> 
+					<p class="link"><%= link_to "Update", edit_flavour_path(flavour), method: "get" %><p> 
+				<% end %>
+				</div> 
+			</div>
+		<% end %>
+	<% end %>
+	<% if current_user.admin? %>
+		<div class="container">
+			<div class="flavour"> 
+				<%= link_to 'New Entry', "flavours/new" %>
+			</div> 
+		</div>
+	<% end %>
 </div>
