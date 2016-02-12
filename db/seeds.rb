@@ -41,6 +41,7 @@
 	
 	puts 'SETTING UP Events'
 	Event.create(name: "The Calm Before the Storm", description: "A crow caws.  A bullet is chambered.  A piano falls silent.  Nothing seems to have changed to the casual observer, but the residents of Malifaux are sensing the tension.  Something's about to happen, and in Malifaux, that means something bad.<br /><br /><b>No special rules in play.</b>", active: true)
+	Event.create(name: "Hidden", description: "If you see this and you aren't an admin I made a mistake", active: false)
 	
 	puts 'SETTING UP M2E Models'
 	Model.create(name: "Lady Justice", soulstones: 15, rare: 1, mercenary: false,  

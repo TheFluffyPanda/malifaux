@@ -4,4 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
+  helper_method :current_events
+
+    def current_events
+        @events = Event.all
+		@current_events = @events.select { |event| event.active? }
+    end
+
 end

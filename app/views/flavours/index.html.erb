@@ -1,7 +1,7 @@
 <div class="header">
 	<div class="container">
 		<div class="flavour">
-			<h1>Flavour</h1>
+			<h2>Flavour</h2>
 		</div>
 	</div>
 </div>
@@ -11,7 +11,7 @@
 		<% if flavour.active? or current_user.admin? %>
 			<div class="container">
 				<div class="flavour"> 
-		  
+
 				<p class="title"><%= flavour.title %></p> 
 				<p class="flavour-content"><%= flavour.content.html_safe %></p> 
 				  
