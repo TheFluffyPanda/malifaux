@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211154020) do
+ActiveRecord::Schema.define(version: 20160212012346) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20160211154020) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "factions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -59,6 +67,14 @@ ActiveRecord::Schema.define(version: 20160211154020) do
 
   add_index "factions_models", ["faction_id"], name: "index_factions_models_on_faction_id"
   add_index "factions_models", ["model_id"], name: "index_factions_models_on_model_id"
+
+  create_table "factions_upgrades", force: :cascade do |t|
+    t.integer "faction_id"
+    t.integer "upgrade_id"
+  end
+
+  add_index "factions_upgrades", ["faction_id"], name: "index_factions_upgrades_on_faction_id"
+  add_index "factions_upgrades", ["upgrade_id"], name: "index_factions_upgrades_on_upgrade_id"
 
   create_table "flavours", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -102,6 +118,10 @@ ActiveRecord::Schema.define(version: 20160211154020) do
   create_table "upgrades", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
+    t.integer  "soulstones"
+    t.boolean  "campaign"
+    t.integer  "rare"
   end
 
   create_table "users", force: :cascade do |t|
