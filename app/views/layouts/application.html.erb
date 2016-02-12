@@ -25,6 +25,9 @@
 				<h3><%= e.name.html_safe %></h3>
 				<%= e.description.html_safe %>
 			<% end %>
+			<% if current_user.admin? %>
+				<%= link_to 'Events Admin', "events/" %>
+			<% end %>
 		</div>
 	</div>	
 <% end %>

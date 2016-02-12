@@ -10,5 +10,9 @@ class ApplicationController < ActionController::Base
         @events = Event.all
 		@current_events = @events.select { |event| event.active? }
     end
+	
+	def require_admin 
+		redirect_to '/' unless current_user.admin? 
+	end
 
 end

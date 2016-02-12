@@ -1,4 +1,6 @@
 class FlavoursController < ApplicationController
+  before_action :require_admin, only: [:destroy, :edit, :update, :new]
+  
   def index
     @flavours = Flavour.all.order(order: :asc)
   end
