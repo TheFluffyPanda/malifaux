@@ -16,11 +16,13 @@
 				<p class="flavour-content"><%= flavour.content.html_safe %></p> 
 				  
 				<% if current_user.admin? %>
-					<p class="active">Currently active? - <%= flavour.active? %></p> 
-					<!--<p class="time"><%= flavour.created_at %></p> -->
-					<p class="time">Order: <%= flavour.order %></p>
-					<p class="link"><%= link_to "Delete", flavour_path(flavour), method: "delete" %><p> 
-					<p class="link"><%= link_to "Update", edit_flavour_path(flavour), method: "get" %><p> 
+					<div class="admin">
+						<p class="active">Currently active? - <%= flavour.active? %></p> 
+						<!--<p class="time"><%= flavour.created_at %></p> -->
+						<p class="time">Order: <%= flavour.order %></p>
+						<p class="link"><%= link_to "Delete", flavour_path(flavour), method: "delete" %><p> 
+						<p class="link"><%= link_to "Update", edit_flavour_path(flavour), method: "get" %><p> 
+					</div>
 				<% end %>
 				</div> 
 			</div>
@@ -28,7 +30,7 @@
 	<% end %>
 	<% if current_user.admin? %>
 		<div class="container">
-			<div class="flavour"> 
+			<div class="admin"> 
 				<%= link_to 'New Entry', "flavours/new" %>
 			</div> 
 		</div>

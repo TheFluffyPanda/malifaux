@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-
   devise_for :admins
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'flavours#index'
+  root 'static_pages#home'
   
  #resources :flavours, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
  resources :flavours, only: [:index, :new, :create, :edit, :update, :destroy]
  resources :events, only: [:index, :new, :create, :edit, :update, :destroy]
+ get 'static_pages/home'
+ 
 
 
   # Example of regular route:
