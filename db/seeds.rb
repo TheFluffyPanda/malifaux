@@ -870,7 +870,7 @@
 	Model.create(name: "Angelica", soulstones: 6, rare: 1, mercenary: false,  
 		:factions => Faction.where(:name => ['Arcanists']), 
 		:station => Station.find_by_name('Enforcer'))
-	Model.create(name: "Blessed of December", soulstones: 6, rare: 1, mercenary: false,  
+	Model.create(name: "Blessed of December", soulstones: 9, rare: 1, mercenary: false,  
 		:factions => Faction.where(:name => ['Arcanists']), 
 		:station => Station.find_by_name('Enforcer'))
 	Model.create(name: "Fire Gamin", soulstones: 4, rare: 0, mercenary: false,  
@@ -1160,7 +1160,7 @@
 	Model.create(name: "Mr. Graves", soulstones: 8, rare: 1, mercenary: false,  
 		:factions => Faction.where(:name => ['Ten Thunders','Neverborn']), 
 		:station => Station.find_by_name('Enforcer'))
-	Model.create(name: "Mr. Tannen", soulstones: 5, rare: 1, mercenary: false,  
+	Model.create(name: "Mr. Tannen", soulstones: 6, rare: 1, mercenary: false,  
 		:factions => Faction.where(:name => ['Ten Thunders','Neverborn']), 
 		:station => Station.find_by_name('Enforcer'))
 	Model.create(name: "Shadow Effigy", soulstones: 4, rare: 1, mercenary: false,  
