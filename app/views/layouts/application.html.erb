@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% unless notice.nil? and alert.nil? %>
+	<div class = "container">
+		<% unless notice.nil? %>
+			<p class="notice"><%= notice %></p>
+		<% end %>
+		<% unless alert.nil? %>
+			<p class="alert"><%= alert %></p>
+		<% end %>
+	</div>
+<% end %>
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.

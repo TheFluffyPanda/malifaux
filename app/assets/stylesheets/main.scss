@@ -33,6 +33,22 @@ div.events
 	text-align: center;
 	border: 5px solid #BB0000;
 }
+p.notice, p#notice
+{
+	background-color: hsla(0, 0%, 100%, 0.6);
+	border-radius: 25px;
+    padding-top: 10px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;
+	text-align: center;
+	border: 5px solid #BB0000;
+}
+p.alert
+{
+	background-color: rgba(255, 0, 0, 0.6);
+	border-radius: 25px;
+    padding-top: 10px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;
+	text-align: center;
+	border: 5px solid #BB0000;
+}
 .navbar-text
 {
 	background-color: hsla(0, 0%, 100%, 0.6);
