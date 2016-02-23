@@ -29,7 +29,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        #format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { flash[:notice] = 'Event was successfully created.' and redirect_to action: "index" }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -43,7 +44,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to events_url, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -71,5 +72,6 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params[:event]
+      params.require(:event).permit(:name, :active, :description)
     end
 end
