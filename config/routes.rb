@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :admins
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
  #resources :flavours, only: [:index, :show, :new, :create, :edit, :update, :destroy] 
  resources :flavours, only: [:index, :new, :create, :edit, :update, :destroy]
  resources :events, only: [:index, :new, :create, :edit, :update, :destroy]
+ resources :arsenals
  get 'static_pages/home'
  
 
